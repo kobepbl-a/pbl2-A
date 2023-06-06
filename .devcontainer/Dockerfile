@@ -5,3 +5,4 @@ RUN pip install numpy
 RUN pip install pandas
 RUN pip install matplotlib
 RUN pip install Pillow
+RUN pip install django social-auth-app-django
