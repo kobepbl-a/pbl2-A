@@ -1,0 +1,52 @@
+{% load static %}
+
+{% block content %}
+
+    <table class="table borderless">
+        <tbody>
+            <!--
+        <tr>
+
+            <th scope="row">icon</th>
+            <td>{% if user.icon %}
+			<img src="{{ user.icon.url }}" class="user-icon">
+			{% else %}
+			<img src="{% static 'images/black.png' %}" class="user-icon">
+			{% endif %}</td>
+        </tr>
+    -->
+        <tr>
+            <th scope="row">氏名</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th scope="row">ニックネーム</th>
+            <td>{{ user.nickname }}</td>
+        </tr>
+        <tr>
+            <th scope="row">学年</th>
+            <td>{{ user.grade }}</td>
+        </tr>
+        <tr>
+            <th scope="row">E-mail</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th scope="row">入会日</th>
+            <td>{{ user.date_joined }}</td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <a class="ui button" href="{% url 'login:change' %}">プロフィール情報変更</a>
+    <style type="text/css">
+    	.user-icon {
+    	height: 80px;
+    	width: 80px;
+    	object-fit: cover;
+    	border-radius: 50%;
+    	border: 1.5px solid #eee;
+		}
+	</style>
+
+{% endblock %}

@@ -13,7 +13,7 @@ class UserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
-            username=username,
+            #username=username,
             email=self.normalize_email(email),
         )
         user.set_password(password)
@@ -34,11 +34,9 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-
-
-    username = models.CharField(_('氏名'), max_length=50, blank=False)
+    username = models.CharField(_('氏名'), max_length=50, blank=False,unique=False)
     kana_characters = models.CharField(_('カタカナ'), max_length=50, blank=True)
-    nickname = models.CharField(_('ニックネーム'), max_length=50, blank=True)
+    nickname = models.CharField(_('ニックネーム'), max_length=50, blank=False)
     email = models.EmailField(_('email address'), unique=True)
 
     school_classification = models.CharField(_('学校区分'), max_length=10)
@@ -47,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     student_number = models.CharField(_('学籍番号'), max_length=10)
     grade = models.CharField(_('学年'), max_length=1, blank=True)
     
-    icon = models.ImageField(upload_to="media",blank=True, null=True)
+    #icon = models.ImageField(upload_to="media",blank=True, null=True)
     introduction = models.CharField(max_length=75, blank=True, null=True)
     followers = models.ManyToManyField('self', blank=True, symmetrical=False)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)

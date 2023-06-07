@@ -1,0 +1,10 @@
+{% block content %}
+
+    <h5>入会</h5>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">入会</button>
+    </form>
+
+{% endblock %}
