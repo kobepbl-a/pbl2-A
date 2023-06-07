@@ -6,9 +6,8 @@ from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, username, email, password=None):
-        if not username:
-            raise ValueError('Users must have an username')
+    def create_user(self, email, password=None):
+
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -20,9 +19,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, password):
+    def create_superuser(self, email, password):
         user = self.create_user(
-            username=username,
             email=self.normalize_email(email),
             password=password,
         )
@@ -69,7 +67,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     #EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = []
 
     class Meta:
         verbose_name = _('user')

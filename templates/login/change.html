@@ -3,8 +3,9 @@
 	<div>
     	<h5 class="card-title text-center">プロフィール変更</h5>
     	<form action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
         	<button type="submit" class="btn btn-primary btn-block">変更</button>
-        	{% csrf_token %}
     	</form>
     </div>
     <div>

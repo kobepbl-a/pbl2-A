@@ -13,7 +13,7 @@ class UserCreateForm(UserCreationForm):
             fields = ('email',)
         else:
         """
-        fields = ('username','nickname', 'email')
+        fields = ('email',)
                 
                 
     def __init__(self, *args, **kwargs):
@@ -28,8 +28,15 @@ class UserChangeForm(ModelForm):
         model = User
         fields = [
             'username',
+            'kana_characters',
             'nickname',
+            'school_classification',
+            'school_name',
+            'Department',
+            'student_number',
             'grade',
+            'introduction',
+            
             #'icon'
         ]
 

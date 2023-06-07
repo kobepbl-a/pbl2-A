@@ -1,20 +1,10 @@
-{% load static %}
+
 
 {% block content %}
 
     <table class="table borderless">
         <tbody>
-            <!--
-        <tr>
 
-            <th scope="row">icon</th>
-            <td>{% if user.icon %}
-			<img src="{{ user.icon.url }}" class="user-icon">
-			{% else %}
-			<img src="{% static 'images/black.png' %}" class="user-icon">
-			{% endif %}</td>
-        </tr>
-    -->
         <tr>
             <th scope="row">氏名</th>
             <td>{{ user.username }}</td>
