@@ -35,7 +35,6 @@ class UserChangeForm(ModelForm):
             'Department',
             'student_number',
             'grade',
-            'introduction',
             
             #'icon'
         ]

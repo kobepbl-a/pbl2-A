@@ -10,22 +10,41 @@
             <td>{{ user.username }}</td>
         </tr>
         <tr>
-            <th scope="row">ニックネーム</th>
-            <td>{{ user.nickname }}</td>
+            <th scope="row">カタカナ</th>
+            <td>{{ user.kana_characters }}</td>
         </tr>
         <tr>
-            <th scope="row">学年</th>
-            <td>{{ user.grade }}</td>
+            <th scope="row">ニックネーム</th>
+            <td>{{ user.nickname }}</td>
         </tr>
         <tr>
             <th scope="row">E-mail</th>
             <td>{{ user.email }}</td>
         </tr>
         <tr>
+            <th scope="row">学校区分</th>
+            <td>{{ user.school_classification }}</td>
+        </tr>
+        <tr>
+            <th scope="row">学校区分</th>
+            <td>{{ user.school_name }}</td>
+        </tr>
+        <tr>
+            <th scope="row">学科</th>
+            <td>{{ user.Department }}</td>
+        </tr>
+        <tr>
+            <th scope="row">学籍番号</th>
+            <td>{{ user.student_number }}</td>
+        </tr>
+        <tr>
+            <th scope="row">学年</th>
+            <td>{{ user.grade }}</td>
+        </tr>
+        <tr>
             <th scope="row">入会日</th>
             <td>{{ user.date_joined }}</td>
-        </tr>
-        
+        </tr>        
         </tbody>
     </table>
     <a class="ui button" href="{% url 'login:change' %}">プロフィール情報変更</a>
